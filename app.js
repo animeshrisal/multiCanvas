@@ -7,6 +7,8 @@ const server = app.listen(3000);
 //Set static path
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log("The server has started on port 3000");
+
 const io = socket(server);
 io.sockets.on('connection', newConnection);
 
