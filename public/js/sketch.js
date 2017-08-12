@@ -1,33 +1,35 @@
 var socket;
+var el = document.getElementById('c');
+var ctx = el.getContext('2d');
+var isDrawing;
 
-function setup(){
-    createCanvas(300, 300);
-    background(51);
-    socket = io.connect('http://localhost:3000');
-    socket.on('mouse', newDrawing);
-}
+socket = io.connect('http://localhost:3000');
+socket.on('mouse', newDrawing);
 
 function newDrawing(data){
-    noStroke();
-    fill(255, 0, 100);
-    ellipse(data.x, data.y, 36, 36);
+    ctx.lineTo(data.x , data.y);
+    ctx.stroke();
 }
 
+el.onmousedown = function(e) {
+  isDrawing = true;
+  ctx.moveTo(e.clientX, e.clientY);
+};
 
-function mouseDragged(){
-    console.log('Sending: ' + mouseX + ' ' + mouseY);
-
+el.onmousemove = function(e) {
+  if (isDrawing) {
+    ctx.lineTo(e.clientX, e.clientY);
+    console.log(e.clientX, e.clientY);
     var data = {
-        x: mouseX,
-        y: mouseY
+        x: e.clientX,
+        y: e.clientY
     }
 
     socket.emit('mouse', data);
-    noStroke();
-    fill(255);
-    ellipse(mouseX, mouseY, 36, 36);
-}
+    ctx.stroke();
+  }
+};
 
-function draw(){
-
-}
+el.onmouseup = function() {
+  isDrawing = false;
+};  
