@@ -1,4 +1,4 @@
-A web app that for multi user canvas drawing using expressjs + p5js + socketio
+A web app that for multi user canvas drawing using expressjs + html5canvas + socketio
 
 To run this use the command `node app` on your terminal. 
 
