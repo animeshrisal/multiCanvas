@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const socket = require('socket.io');
 const app = express();
-const server = app.listen(3000);
+const server = app.listen(3000);   
 
 //Set static path
 app.use(express.static(path.join(__dirname, 'public')));
