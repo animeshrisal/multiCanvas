@@ -1,1 +1,18 @@
-canvas { border: 1px solid #ccc }
+canvas { 
+    border: 1px solid #ccc; 
+    background-color: white;
+}
+
+#paint{
+    float:left;
+}
+
+body{
+    background-color:#ccc;
+}
+
+#chatBox{
+    float: right;
+    margin: 20px;
+}
+

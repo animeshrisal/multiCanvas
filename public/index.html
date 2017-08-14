@@ -5,9 +5,26 @@
 
     </head>
     <body>
-    <canvas id="c" width="500" height="300"></canvas>
-    <input id = "colorChooser" type = "color" />
+    <div id = "paint">
+        <canvas id="c" width="1200" height="800"></canvas>  
+        <div id = "chooseColor">
+            Pick a color from here
+            <input id = "colorChooser" type = "color"  />
+        </div>
+    </div>
+    <div id = "chatBox">
+        <div id = "chatWindow">
+            <textarea id = "text" rows = "40" cols = "75"></textarea>
+        </div>
+        <div id = "chatInput">
+            <input id = "messageField" type = "text" name = "message" height = '40' />
+            <button id = "messageButton" >Send Message</button>
+        </div>
+    </div>
+    
+    
     <script src = "js/socket.io.js"></script>
-    <script src = "js/sketch.js"></script>    
+    <script src = "js/sketch.js"></script>   
+    <script src = "js/ui.js"></script> 
     </body>
 </html>
