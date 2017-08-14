@@ -60,7 +60,7 @@ el.onmousemove = function(e) {
     
     socket.emit('mouse', data);
     
-    ctx.lineTo(e.clientX - 5, e.clientY - 5);
+    ctx.lineTo(e.clientX, e.clientY);
     ctx.stroke();
   }
 };
