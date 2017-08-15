@@ -6,6 +6,7 @@ var colorPick = "#99ff99";
 var colorChooser = document.getElementById('colorChooser');
 var colorChanged = false;
 var stopClosePathInfo = true;
+
 socket = io.connect('http://localhost:3000');
 socket.on('mouse', newDrawing);
 
